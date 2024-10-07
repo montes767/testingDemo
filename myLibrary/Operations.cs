@@ -22,5 +22,16 @@ namespace myLibrary
         {
             return number + number2;
         }
-    } 
+
+        // Uso de IList porque es la interfaz, sirve para cambiar el tipo de lista, no tener que devolver siempre un list, puedes devolver todos los usos de esa interfaz, por ejemplo ArrayList
+        public IList<int> GetEvenNumbers(int start, int end)
+        {
+            return Enumerable.Range(start, end)
+                .Where(isEven)
+                .ToList();
+            //Hacer metodo de prueba sobre esta lista que devuelve, buscar por internet metodos NUnit para arrays
+
+        }
+
+    }
 }
